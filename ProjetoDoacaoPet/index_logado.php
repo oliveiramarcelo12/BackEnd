@@ -33,8 +33,7 @@ rel="stylesheet" integrity="sha384-
 <div class="container">
 <div class="col-md-11">
 
-<h2 class="title">Olá <i><?php echo $_SESSION['nome']; ?></i>, seja bem-
-vindo(a)!</h2>
+<h2 class="title">Olá <i><?php echo $_SESSION['nome']; ?></i>, seja bem-vindo(a)!</h2>
 
 </div>
 </div>
