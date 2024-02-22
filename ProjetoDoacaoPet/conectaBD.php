@@ -14,7 +14,7 @@ try {
 // errmode
 $pdo = new PDO("pgsql:host=$endereco;port=5432;dbname=$banco", $admin, $senha,
 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
-echo "Conectado no banco de dados!!!";
+
 $sql = "CREATE TABLE IF NOT EXISTS usuario (ID SERIAL,
     nome VARCHAR(100) NOT NULL,
     data_nascimento DATE NOT NULL,
@@ -22,6 +22,20 @@ $sql = "CREATE TABLE IF NOT EXISTS usuario (ID SERIAL,
     email VARCHAR(100) Primary Key NOT NULL,
     senha VARCHAR(255) NOT NULL
 )";
+$sql = "CREATE TABLE IF NOT EXISTS anuncio (
+    id SERIAL PRIMARY KEY,
+    fase VARCHAR(50) NOT NULL,
+    tipo VARCHAR(50) NOT NULL,
+    porte VARCHAR(50) NOT NULL,
+    sexo VARCHAR(10) NOT NULL,
+    pelagem_cor VARCHAR(100) NOT NULL,
+    raca VARCHAR(100) NOT NULL,
+    observacao TEXT,
+    email_usuario VARCHAR(100) NOT NULL
+)";
+
+
+
 $stmt = $pdo->prepare($sql);
 // Executar a consulta SQL
 $pdo->exec($sql);
